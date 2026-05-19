@@ -1,7 +1,5 @@
 # 陈文俊 Wenjun Chen — Interdisciplinary Artist Portfolio
 
-Live Website: [chenwenjun.net](https://chenwenjun.net)
-
 Portfolio website of Wenjun Chen, an interdisciplinary artist working on new media, exploring the mixed relationship between real and virtual.
 
 ## 🌟 Features
