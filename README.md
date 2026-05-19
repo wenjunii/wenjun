@@ -44,5 +44,20 @@ Generate an optimized production bundle:
 npm run build
 ```
 
+## 🌐 Deployment & Republishing
+
+This website is automatically deployed to **GitHub Pages** using **GitHub Actions**.
+
+### Automatic Deployment
+Any push or merge to the `main` branch will automatically trigger the deployment workflow, building the site and updating the live page.
+
+### Manual Redeployment / Republishing
+If you have unpublished the page or want to manually trigger a fresh deploy without changing code:
+1. Navigate to your repository on GitHub.
+2. Click on the **Actions** tab at the top.
+3. In the left-hand sidebar, select **Deploy to GitHub Pages**.
+4. Click the **Run workflow** dropdown on the right side.
+5. Select the `main` branch and click **Run workflow**.
+
 ## 📜 License
 © 2026 Wenjun Chen. All rights reserved.
