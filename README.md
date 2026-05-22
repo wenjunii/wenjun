@@ -79,5 +79,14 @@ To route the custom domain to this GitHub Pages site, the following DNS records 
   * Host: `www`
   * Value: `wenjunii.github.io`
 
+### Social Sharing Thumbnail (Open Graph)
+When sharing the website link (`https://chenwenjun.net`) on messaging apps (iMessage, WhatsApp, Slack, Teams) or social media (X/Twitter, LinkedIn, Facebook), a rich visual preview card is displayed.
+
+#### Codebase Configuration
+* **Thumbnail File**: Located at `public/images/og-thumbnail.jpg`. The recommended size is `1200 x 630` pixels (aspect ratio `1.91:1`).
+* **HTML Integration**: `index.html` contains the required `<meta>` tags for `og:image` and `twitter:image` pointing to `https://chenwenjun.net/images/og-thumbnail.jpg` as well as the standard `<link rel="icon" type="image/svg+xml" href="/favicon.svg" />`.
+
+To change the thumbnail, simply replace the file at `public/images/og-thumbnail.jpg` with a new image of the same name and push the change to GitHub.
+
 ## 📜 License
 © 2026 Wenjun Chen. All rights reserved.
