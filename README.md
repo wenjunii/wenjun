@@ -61,5 +61,23 @@ If you have unpublished the page or want to manually trigger a fresh deploy with
 4. Click the **Run workflow** dropdown on the right side.
 5. Select the `main` branch and click **Run workflow**.
 
+### Custom Domain Configuration
+The website is configured to run under the custom domain **[chenwenjun.net](https://chenwenjun.net/)**.
+
+#### 1. Codebase Configurations
+* **CNAME file**: A `CNAME` file is located at `public/CNAME` containing `chenwenjun.net`. During build, Vite copies this file to the root of the `dist` directory.
+* **Base Path**: The base path in `vite.config.js` is set to `'/'` to ensure asset URLs resolve correctly from the root of the custom domain.
+
+#### 2. DNS Settings (Domain Registrar)
+To route the custom domain to this GitHub Pages site, the following DNS records are configured at the domain registrar:
+* **Apex Domain A Records** (pointing `@` or blank to GitHub Pages servers):
+  * `185.199.108.153`
+  * `185.199.109.153`
+  * `185.199.110.153`
+  * `185.199.111.153`
+* **Subdomain CNAME Record** (routing `www.chenwenjun.net` to the GitHub Pages URL):
+  * Host: `www`
+  * Value: `wenjunii.github.io`
+
 ## 📜 License
 © 2026 Wenjun Chen. All rights reserved.
