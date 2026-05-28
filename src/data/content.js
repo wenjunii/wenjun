@@ -20,6 +20,7 @@ export const works = [
         'We are generating more and more digital data, and virtual life is becoming increasingly dominant. Personal identities are becoming interchangeable and indistinguishable between the virtual and real worlds. Through this work, I explore the inter-transformative relationship between the real and the virtual, the tangible and the intangible, the material and the immaterial, and the thing and the non-thing.',
         'Meanwhile, technology is also extending its tendrils into the most personal spheres of humans, commoditizing personal data as a lucrative venture. I aim to engage in the claiming of sovereignty over our personal data, creating a space where personal data transcends commercial value and morphs into a playground for self-reflection, artistic expression, creativity, and exploration.',
         'This work was initiated on GitHub Pages and developed into a narrative video, virtual reality, WebXR and installation.',
+        'Project Portfolio: <a href="https://wenjunii.github.io/Lifeography/portfolio_aliens.html" target="_blank" rel="noopener">https://wenjunii.github.io/Lifeography/portfolio_aliens.html</a>',
       ],
       cn: [
         'Aliens of Me是以我的个人数据为基础，利用网络、视频、虚拟现实和装置技术进行的一次自我探索。我利用网上分享的记忆中的关键字和智能手表捕捉到的我的健康数据，通过虚拟化身、我的成长故事以及容纳这些化身和故事的新身体来重建我自己。这也反映了我作为一名来自中国的新移民，来到一个模拟与数字融合的开放新世界的身份。',

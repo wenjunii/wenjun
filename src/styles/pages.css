@@ -264,6 +264,19 @@
   margin-bottom: 0;
 }
 
+.work-description a {
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1px;
+  transition: opacity var(--duration-fast), border-color var(--duration-fast);
+}
+
+.work-description a:hover {
+  opacity: 0.7;
+  border-bottom-color: var(--color-text);
+}
+
 /* Links */
 .work-links {
   margin-bottom: var(--space-12);
