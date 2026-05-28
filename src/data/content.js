@@ -20,13 +20,14 @@ export const works = [
         'We are generating more and more digital data, and virtual life is becoming increasingly dominant. Personal identities are becoming interchangeable and indistinguishable between the virtual and real worlds. Through this work, I explore the inter-transformative relationship between the real and the virtual, the tangible and the intangible, the material and the immaterial, and the thing and the non-thing.',
         'Meanwhile, technology is also extending its tendrils into the most personal spheres of humans, commoditizing personal data as a lucrative venture. I aim to engage in the claiming of sovereignty over our personal data, creating a space where personal data transcends commercial value and morphs into a playground for self-reflection, artistic expression, creativity, and exploration.',
         'This work was initiated on GitHub Pages and developed into a narrative video, virtual reality, WebXR and installation.',
-        '<strong>Project Portfolio</strong>: <a href="https://wenjunii.github.io/Lifeography/portfolio_aliens.html" target="_blank" rel="noopener">https://wenjunii.github.io/Lifeography/portfolio_aliens.html</a>',
+        '<a href="https://wenjunii.github.io/Lifeography/portfolio_aliens.html" target="_blank" rel="noopener"><strong>Project Portfolio</strong></a>',
       ],
       cn: [
         'Aliens of Me是以我的个人数据为基础，利用网络、视频、虚拟现实和装置技术进行的一次自我探索。我利用网上分享的记忆中的关键字和智能手表捕捉到的我的健康数据，通过虚拟化身、我的成长故事以及容纳这些化身和故事的新身体来重建我自己。这也反映了我作为一名来自中国的新移民，来到一个模拟与数字融合的开放新世界的身份。',
         '我们正在产生越来越多的数字数据，虚拟生活正变得日益重要。个人身份在虚拟世界和现实世界之间变得可以互换，难以区分。通过这件作品，我探索了真实与虚拟、有形与无形、物质与非物质、事物与非事物之间的相互转化关系。',
         '与此同时，技术的触角也伸向了人类最私密的领域，将个人数据商品化，成为一项有利可图的事业。我的目标是参与对个人数据主权的主张，创造一个空间，让个人数据超越商业价值，蜕变为自我反思、艺术表达、创造力和探索的乐园。',
         '这件作品始于GitHub Pages，并发展成为叙事视频, 虚拟现实，网页XR和装置。',
+        '<a href="https://wenjunii.github.io/Lifeography/portfolio_aliens.html" target="_blank" rel="noopener"><strong>项目作品集</strong></a>',
       ],
     },
     images: [
