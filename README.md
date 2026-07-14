@@ -2,6 +2,8 @@
 
 Live Website: [chenwenjun.net](https://chenwenjun.net/)
 
+Repository: [github.com/wenjunii/wenjun](https://github.com/wenjunii/wenjun)
+
 Portfolio website of Wenjun Chen, an interdisciplinary artist working on new media, exploring the mixed relationship between real and virtual.
 
 ## 🌟 Features
@@ -27,23 +29,38 @@ Portfolio website of Wenjun Chen, an interdisciplinary artist working on new med
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/WenjunII/wenjun.git
+   git clone https://github.com/wenjunii/wenjun.git
    ```
 2. Install dependencies:
    ```bash
    npm install
    ```
 
-### Development
+### Available Scripts
+
 Start the local development server:
 ```bash
 npm run dev
 ```
 
-### Production Build
 Generate an optimized production bundle:
 ```bash
 npm run build
+```
+
+Preview the production build locally:
+```bash
+npm run preview
+```
+
+Run the same production-build check used by GitHub Actions:
+```bash
+npm run check
+```
+
+Prepare the site for deployment locally. GitHub Pages still publishes automatically after pushing to `main`.
+```bash
+npm run deploy
 ```
 
 ## 🌐 Deployment & Republishing
