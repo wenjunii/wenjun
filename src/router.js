@@ -4,7 +4,7 @@
 
 export class Router {
   constructor() {
-    this.routes = {};
+    this.routes = new Map();
     this.currentRoute = null;
     this.onNavigate = null;
     window.addEventListener('hashchange', () => this.resolve());
@@ -12,7 +12,7 @@ export class Router {
   }
 
   add(path, handler) {
-    this.routes[path] = handler;
+    this.routes.set(path, handler);
     return this;
   }
 
@@ -20,15 +20,16 @@ export class Router {
     const hash = window.location.hash.slice(1) || '/';
     
     // Try exact match first
-    if (this.routes[hash]) {
+    const exactHandler = this.routes.get(hash);
+    if (typeof exactHandler === 'function') {
       this.currentRoute = hash;
-      this.routes[hash]();
+      exactHandler();
       if (this.onNavigate) this.onNavigate(hash);
       return;
     }
 
     // Try pattern matching (e.g., /works/:id)
-    for (const [pattern, handler] of Object.entries(this.routes)) {
+    for (const [pattern, handler] of this.routes) {
       const regex = this.patternToRegex(pattern);
       const match = hash.match(regex);
       if (match) {
@@ -41,9 +42,10 @@ export class Router {
     }
 
     // Fallback to home
-    if (this.routes['/']) {
+    const fallbackHandler = this.routes.get('/');
+    if (typeof fallbackHandler === 'function') {
       this.currentRoute = '/';
-      this.routes['/']();
+      fallbackHandler();
       if (this.onNavigate) this.onNavigate('/');
     }
   }
