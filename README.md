@@ -9,6 +9,7 @@ Portfolio website of Wenjun Chen, an interdisciplinary artist working on new med
 ## 🌟 Features
 
 - **Bilingual Experience**: Full support for English and Chinese (Simplified).
+- **Bilingual Artist CV**: Selected exhibitions, awards, collections, commissions, and education in both languages.
 - **Modern Layout**: Responsive design optimized for Desktop, Tablet, and Mobile devices.
 - **High-Resolution Galleries**: Custom-built lightbox component with tap-to-zoom support for viewing artistic details.
 - **Fast Performance**: Built with Vite for nearly instantaneous loading and smooth transitions.
@@ -33,7 +34,7 @@ Portfolio website of Wenjun Chen, an interdisciplinary artist working on new med
    ```
 2. Install dependencies:
    ```bash
-   npm install
+   npm ci
    ```
 
 ### Available Scripts
@@ -53,7 +54,12 @@ Preview the production build locally:
 npm run preview
 ```
 
-Run the same production-build check used by GitHub Actions:
+Audit production dependencies for high-severity vulnerabilities:
+```bash
+npm run audit
+```
+
+Run the same dependency audit and production build used by GitHub Actions:
 ```bash
 npm run check
 ```
@@ -68,7 +74,13 @@ npm run deploy
 This website is automatically deployed to **GitHub Pages** using **GitHub Actions**.
 
 ### Automatic Deployment
-Any push or merge to the `main` branch will automatically trigger the deployment workflow, building the site and updating the live page.
+The `main` branch is protected. Publish changes through a pull request:
+1. Create a branch and commit the website update.
+2. Push the branch and open a pull request targeting `main`.
+3. Confirm that the required checks pass.
+4. Merge the pull request.
+
+Every merge to `main` automatically triggers the deployment workflow, audits dependencies, builds the site, and updates the live page.
 
 ### Manual Redeployment / Republishing
 If you have unpublished the page or want to manually trigger a fresh deploy without changing code:
