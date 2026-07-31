@@ -200,6 +200,8 @@ export const cv = {
     { year: '2010', text: 'Xu Xiaobing Photography Exhibition Outstanding Works of Art, Tongxiang, Zhejiang, China' },
   ],
   exhibitions: [
+    { year: '2026', text: 'Hometown XR, Alterwork Studios, New York, NY, USA' },
+    { year: '2026', text: 'The Inner Structure of a City, China Construction Fourth Engineering Bureau Co., Ltd., City Cultural Center, Guangzhou, Guangdong, China' },
     { year: '2026', text: 'Out of Bounds, Not Real Art, Online' },
     { year: '2025', text: 'NYC PIT Pop Up, CUNY Public Interest Tech Lab, The Oculus World Trade Center, New York, NY, USA' },
     { year: '2025', text: 'Hometown XR, AnkhLave Arts Alliance, Governors Island, New York, NY, USA' },
@@ -268,6 +270,8 @@ export const cvCN = {
     { year: '2010', text: '徐肖冰摄影展优秀作品，桐乡，浙江，中国' },
   ],
   exhibitions: [
+    { year: '2026', text: 'Hometown XR，Alterwork Studios，纽约，纽约，美国' },
+    { year: '2026', text: '一座城市的内在结构，中建四局城市更新与运营事业部，城市文化中心，广州，广东，中国' },
     { year: '2026', text: 'Out of Bounds， Not Real Art， 网络' },
     { year: '2025', text: 'NYC PIT Pop Up， CUNY Public Interest Tech (PIT) Lab， The Oculus World Trade Center， 纽约，纽约，美国' },
     { year: '2025', text: 'Hometown XR， AnkhLave Arts Alliance， Governors Island, 纽约，纽约，美国' },
