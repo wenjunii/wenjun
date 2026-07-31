@@ -13,7 +13,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "audit": "npm audit --audit-level=high",
-    "check": "npm run audit && npm run build",
+    "check:content": "node --check src/data/content.js",
+    "check": "npm run audit && npm run check:content && npm run build",
     "deploy": "npm run check"
   },
   "devDependencies": {
