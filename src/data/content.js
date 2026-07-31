@@ -321,7 +321,7 @@ export const cvCN = {
   commissions: [
     { year: '2016', text: '港口与影像：行动中的中国港城影像计划，摄影与视频，中国港口博物馆，宁波，浙江，中国' },
   ],
-  fullCvUrl: '/files/CV_Wenjun_Chen_CN.pdf',
+  fullCvUrl: 'https://docs.google.com/document/d/1YZYRGanCUk8IBSv1uL8cJBin1yuNRYCGuYPUNjA2Eaw/edit?usp=sharing',
 };
 
 export const contact = {

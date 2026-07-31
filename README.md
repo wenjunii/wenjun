@@ -9,7 +9,7 @@ Portfolio website of Wenjun Chen, an interdisciplinary artist working on new med
 ## 🌟 Features
 
 - **Bilingual Experience**: Full support for English and Chinese (Simplified).
-- **Bilingual Artist CV**: Selected exhibitions, awards, collections, commissions, and education in both languages.
+- **Bilingual Artist CV**: Selected exhibitions, awards, collections, commissions, and education in both languages, with access to the shared full CV.
 - **Modern Layout**: Responsive design optimized for Desktop, Tablet, and Mobile devices.
 - **High-Resolution Galleries**: Custom-built lightbox component with tap-to-zoom support for viewing artistic details.
 - **Fast Performance**: Built with Vite for nearly instantaneous loading and smooth transitions.
@@ -59,7 +59,12 @@ Audit production dependencies for high-severity vulnerabilities:
 npm run audit
 ```
 
-Run the same dependency audit and production build used by GitHub Actions:
+Validate the portfolio content module:
+```bash
+npm run check:content
+```
+
+Run the same dependency audit, content validation, and production build used by GitHub Actions:
 ```bash
 npm run check
 ```
@@ -68,6 +73,12 @@ Prepare the site for deployment locally. GitHub Pages still publishes automatica
 ```bash
 npm run deploy
 ```
+
+## 📝 Updating Portfolio Content
+
+Portfolio text, CV entries, projects, publications, and contact details are maintained in [`src/data/content.js`](src/data/content.js).
+
+The English `cv` and Chinese `cvCN` objects each define a `fullCvUrl`. Both biography pages currently point to the same shared Google Docs CV. Update the fields independently if separate language-specific documents are introduced later.
 
 ## 🌐 Deployment & Republishing
 
