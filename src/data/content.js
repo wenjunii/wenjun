@@ -8,6 +8,11 @@ export const siteInfo = {
   description: 'Interdisciplinary artist working on new media, exploring the mixed relationship between real and virtual.',
 };
 
+export const homeFeature = {
+  workId: 'hometown-xr',
+  image: '19.GIF',
+};
+
 export const works = [
   {
     id: 'hometown-xr',

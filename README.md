@@ -11,6 +11,7 @@ Portfolio website of Wenjun Chen, an interdisciplinary artist working on new med
 - **Bilingual Experience**: Full support for English and Chinese (Simplified).
 - **Bilingual Artist CV**: Selected exhibitions, awards, collections, commissions, and education in both languages, with access to the shared full CV.
 - **Modern Layout**: Responsive design optimized for Desktop, Tablet, and Mobile devices.
+- **Featured Homepage Work**: Hometown XR's animated `19.GIF`, with its title, year, medium, and project link kept in sync with the portfolio content.
 - **High-Resolution Galleries**: Custom-built lightbox component with tap-to-zoom support for viewing artistic details.
 - **Portrait Image Layout**: Standard gallery portraits are centered at up to 680px high and scale proportionally on narrow screens. Landscape images and full-resolution views keep their existing sizing.
 - **Fast Performance**: Built with Vite for nearly instantaneous loading and smooth transitions.
@@ -66,12 +67,12 @@ Check the portfolio content module's JavaScript syntax:
 npm run check:content
 ```
 
-Verify that every gallery image exists with the exact folder and filename capitalization:
+Verify the homepage's selected work and check that its image and every gallery image exist with the exact folder and filename capitalization:
 ```bash
 npm run check:images
 ```
 
-Run the image-validator regression tests:
+Run the gallery and homepage image-validator regression tests:
 ```bash
 npm test
 ```
@@ -91,6 +92,21 @@ npm run deploy
 Portfolio text, CV entries, projects, publications, and contact details are maintained in [`src/data/content.js`](src/data/content.js).
 
 The English `cv` and Chinese `cvCN` objects each define a `fullCvUrl`. Both biography pages currently point to the same shared Google Docs CV. Update the fields independently if separate language-specific documents are introduced later.
+
+### Homepage Feature
+
+The `homeFeature` object in `src/data/content.js` selects the work and image shown on the homepage:
+
+```js
+export const homeFeature = {
+  workId: 'hometown-xr',
+  image: '19.GIF',
+};
+```
+
+The image resolves to `public/images/works/hometown-xr/19.GIF`. The homepage reads the title, year, and medium from the matching `works` entry and links to `#/works/hometown-xr`, so these details do not need to be duplicated in `src/pages/home.js`. The GIF remains animated and scales proportionally on desktop and mobile.
+
+To feature another work, update `workId` and `image` together. `npm run check:images` rejects unknown work IDs, empty image filenames, missing files, and capitalization mismatches. The social-sharing thumbnail is separate and remains unchanged by this selection.
 
 ### Project Images
 
