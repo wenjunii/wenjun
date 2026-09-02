@@ -322,6 +322,11 @@
   transition: transform var(--duration-slow) var(--ease-out);
 }
 
+.work-gallery__item--portrait:not(.work-gallery__item--full-res) {
+  align-self: center;
+  width: min(100%, calc(680px * var(--image-aspect-ratio)));
+}
+
 .work-gallery__item:hover img {
   transform: scale(1.01);
 }
@@ -678,4 +683,3 @@
   letter-spacing: var(--tracking-widest);
   color: var(--color-text-muted);
 }
-

@@ -106,6 +106,12 @@ export function renderGallery(imageItems, basePath = '/images/', options = {}) {
     wrapper.className = 'work-gallery__item reveal';
 
     const img = document.createElement('img');
+    img.addEventListener('load', () => {
+      if (img.naturalHeight > img.naturalWidth) {
+        wrapper.classList.add('work-gallery__item--portrait');
+        wrapper.style.setProperty('--image-aspect-ratio', img.naturalWidth / img.naturalHeight);
+      }
+    }, { once: true });
     img.src = `${basePath}${item.file}`;
     img.alt = item.caption || `Artwork ${index + 1}`;
     img.loading = 'lazy';
