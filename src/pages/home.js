@@ -2,24 +2,21 @@
 // Home Page
 // ========================================
 
-import { works, publications, commissions } from '../data/content.js';
+import { works, homeFeature } from '../data/content.js';
 import { initRevealObserver } from '../components/gallery.js';
 
 export function renderHomePage(container) {
   const page = document.createElement('div');
   page.className = 'page-container';
 
-  // Find Aliens of Me
-  const work = works.find(w => w.id === 'aliens-of-me');
+  const work = works.find(w => w.id === homeFeature.workId);
   
   if (!work) {
-    container.innerHTML = '<div class="page-container"><p>Aliens of Me not found.</p></div>';
+    container.innerHTML = '<div class="page-container"><p>Featured work not found.</p></div>';
     return;
   }
 
-  const hasImages = work.images && work.images.length > 0;
-  // Specific index image for Aliens of Me
-  const thumbFile = work.id === 'aliens-of-me' ? '5.gif' : (hasImages ? (typeof work.images[0] === 'string' ? work.images[0] : work.images[0].file) : null);
+  const thumbFile = homeFeature.image;
 
   let html = '';
   html += '<div class="home-grid home-grid--single">';

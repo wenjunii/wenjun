@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import test from 'node:test';
-import { validateGalleryImages } from './check-images.mjs';
+import { validateGalleryImages, validateHomeFeature } from './check-images.mjs';
 
 function fixture(t, files) {
   const root = mkdtempSync(join(tmpdir(), 'portfolio-images-test-'));
@@ -52,4 +52,34 @@ test('reports missing files and does not accept a directory as an image', t => {
 test('allows projects without gallery images', t => {
   const root = fixture(t, []);
   assert.deepEqual(validateGalleryImages({ works: [{ id: 'empty', images: [] }, { id: 'text-only' }] }, root), { checked: 0, errors: [] });
+});
+
+test('validates the homepage image independently of the project gallery', t => {
+  const root = fixture(t, ['works/hometown-xr/19.GIF']);
+  const result = validateHomeFeature({ workId: 'hometown-xr', image: '19.GIF' }, [{ id: 'hometown-xr', images: [] }], root);
+  assert.deepEqual(result, { checked: 1, errors: [] });
+});
+
+test('rejects a homepage work that is not registered even if its image exists', t => {
+  const root = fixture(t, ['works/hometown-xr/19.GIF']);
+  const result = validateHomeFeature({ workId: 'hometown-xr', image: '19.GIF' }, [], root);
+  assert.deepEqual(result, { checked: 0, errors: ['Unknown homepage work: hometown-xr'] });
+});
+
+test('requires exact homepage image capitalization and an existing file', t => {
+  const root = fixture(t, ['works/hometown-xr/19.GIF']);
+  for (const image of ['19.gif', 'missing.GIF']) {
+    const result = validateHomeFeature({ workId: 'hometown-xr', image }, [{ id: 'hometown-xr' }], root);
+    assert.equal(result.checked, 1);
+    assert.equal(result.errors.length, 1);
+    assert.ok(result.errors[0].includes(`public/images/works/hometown-xr/${image}`));
+  }
+});
+
+test('requires a nonempty homepage image filename', t => {
+  const root = fixture(t, []);
+  for (const image of [undefined, null, '', '   ']) {
+    const result = validateHomeFeature({ workId: 'hometown-xr', image }, [{ id: 'hometown-xr' }], root);
+    assert.deepEqual(result, { checked: 0, errors: ['Homepage feature must specify an image filename.'] });
+  }
 });
