@@ -12,6 +12,7 @@ Portfolio website of Wenjun Chen, an interdisciplinary artist working on new med
 - **Bilingual Artist CV**: Selected exhibitions, awards, collections, commissions, and education in both languages, with access to the shared full CV.
 - **Modern Layout**: Responsive design optimized for Desktop, Tablet, and Mobile devices.
 - **High-Resolution Galleries**: Custom-built lightbox component with tap-to-zoom support for viewing artistic details.
+- **Portrait Image Layout**: Standard gallery portraits are centered at up to 680px high and scale proportionally on narrow screens. Landscape images and full-resolution views keep their existing sizing.
 - **Fast Performance**: Built with Vite for nearly instantaneous loading and smooth transitions.
 - **Minimalist Aesthetics**: Clean, typography-focused design that prioritizes the artist's work.
 
@@ -25,12 +26,13 @@ Portfolio website of Wenjun Chen, an interdisciplinary artist working on new med
 ## 🚀 Getting Started
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (Latest LTS recommended)
+- [Node.js](https://nodejs.org/) 24, matching the GitHub Actions environment.
 
 ### Installation
 1. Clone the repository:
    ```bash
    git clone https://github.com/wenjunii/wenjun.git
+   cd wenjun
    ```
 2. Install dependencies:
    ```bash
@@ -54,22 +56,32 @@ Preview the production build locally:
 npm run preview
 ```
 
-Audit production dependencies for high-severity vulnerabilities:
+Audit dependencies, including build tooling, for high-severity vulnerabilities:
 ```bash
 npm run audit
 ```
 
-Validate the portfolio content module:
+Check the portfolio content module's JavaScript syntax:
 ```bash
 npm run check:content
 ```
 
-Run the same dependency audit, content validation, and production build used by GitHub Actions:
+Verify that every gallery image exists with the exact folder and filename capitalization:
+```bash
+npm run check:images
+```
+
+Run the image-validator regression tests:
+```bash
+npm test
+```
+
+Run the dependency audit, content syntax check, tests, image-path validation, and production build used by GitHub Actions:
 ```bash
 npm run check
 ```
 
-Prepare the site for deployment locally. GitHub Pages still publishes automatically after pushing to `main`.
+Run the same checks locally before publishing. This command does not upload the site; GitHub Pages publishes after the pull request is merged into `main`.
 ```bash
 npm run deploy
 ```
@@ -79,6 +91,22 @@ npm run deploy
 Portfolio text, CV entries, projects, publications, and contact details are maintained in [`src/data/content.js`](src/data/content.js).
 
 The English `cv` and Chinese `cvCN` objects each define a `fullCvUrl`. Both biography pages currently point to the same shared Google Docs CV. Update the fields independently if separate language-specific documents are introduced later.
+
+### Project Images
+
+Image folders must match the project `id` exactly:
+
+| Collection | Image folder |
+| --- | --- |
+| `works` | `public/images/works/<id>/` |
+| `publications` | `public/images/books/<id>/` |
+| `commissions` | `public/images/commission/<id>/` |
+
+Hometown XR uses `id: 'hometown-xr'` and seven images in `public/images/works/hometown-xr/`. Keep filenames and extensions identical to the entries in `images`, including the uppercase extension in `19.GIF`. Entries may be filenames or objects with a `file` and optional `caption`.
+
+Portrait orientation is detected when an image loads. Standard portrait galleries are horizontally centered, preserve the original aspect ratio, and use a 680px maximum height. The sizing rule is in `src/styles/pages.css`; images explicitly marked `fullRes` retain their original inline sizing. Lightbox and zoom behavior are unchanged.
+
+Include both the content edit and image files in the same pull request, and run `npm run check` before publishing.
 
 ## 🌐 Deployment & Republishing
 
@@ -91,7 +119,7 @@ The `main` branch is protected. Publish changes through a pull request:
 3. Confirm that the required checks pass.
 4. Merge the pull request.
 
-Every merge to `main` automatically triggers the deployment workflow, audits dependencies, builds the site, and updates the live page.
+The **Check website** workflow runs `npm run check` on pull requests targeting `main`. Every merge to `main` triggers **Deploy to GitHub Pages**, which repeats the checks, builds the site, and updates the live page.
 
 ### Manual Redeployment / Republishing
 If you have unpublished the page or want to manually trigger a fresh deploy without changing code:

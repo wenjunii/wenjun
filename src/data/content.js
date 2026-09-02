@@ -10,6 +10,30 @@ export const siteInfo = {
 
 export const works = [
   {
+    id: 'hometown-xr',
+    title: { en: 'Hometown XR', cn: '' },
+    year: '2025–Ongoing',
+    medium: 'Web, Video, Virtual Reality, Generative AI, Projection Mapping, Immersive and Interactive Installation',
+    description: {
+      en: [
+        'Hometown XR is an ongoing project that explores how personal and collective memories of “hometowns” are reshaped in the age of data and digital networks. The project examines the tension between the real and the virtual, blending oral histories, crowdsourced narratives, and open-source datasets with AI-driven generative media to construct immersive experiences that visualize memory as a living, fluid process.',
+        '<a href="https://wenjunii.github.io/Lifeography/portfolio_2.html" target="_blank" rel="noopener"><strong>Project Portfolio</strong></a>',
+      ],
+      cn: [
+        'Hometown XR是一个正在进行中的项目，旨在探索在数据与数字网络时代，“家乡”的个人记忆与集体记忆是如何被重塑的。该项目探讨了现实与虚拟之间的张力，将口述历史、众包叙事和开源数据集与人工智能驱动的生成式媒体相结合，构建出沉浸式体验，将记忆呈现为一个鲜活且流动的过程。',
+        '<a href="https://wenjunii.github.io/Lifeography/portfolio_2.html" target="_blank" rel="noopener"><strong>项目作品集</strong></a>',
+      ],
+    },
+    images: [
+      { file: '16.jpeg', caption: 'Projection Mapping' }, { file: '17.jpg', caption: 'Projection Mapping' }, { file: '18.jpg', caption: 'Projection Mapping' }, { file: '19.GIF', caption: 'Projection Installation' }, { file: '20.gif', caption: 'Projection Installation' }, { file: '21.gif', caption: 'Three-channel Video' }, { file: '22.jpg', caption: 'Three-channel Video' }
+    ],
+    //videos: [{ id: 'DT4h2USWL6A', title: 'Aliens of Me' }],
+    links: [
+      { label: 'Project Portfolio', url: 'https://wenjunii.github.io/Lifeography/portfolio_2.html' },
+      { label: 'GitHub', url: 'https://github.com/wenjunii/hometown-xr' },
+    ],
+  },
+  {
     id: 'aliens-of-me',
     title: { en: 'Aliens of Me', cn: '' },
     year: '2022–2024',

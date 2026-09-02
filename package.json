@@ -14,7 +14,9 @@
     "preview": "vite preview",
     "audit": "npm audit --audit-level=high",
     "check:content": "node --check src/data/content.js",
-    "check": "npm run audit && npm run check:content && npm run build",
+    "check:images": "node scripts/check-images.mjs",
+    "test": "node --test scripts/check-images.test.mjs",
+    "check": "npm run audit && npm run check:content && npm test && npm run check:images && npm run build",
     "deploy": "npm run check"
   },
   "devDependencies": {
